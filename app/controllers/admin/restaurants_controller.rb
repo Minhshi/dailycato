@@ -8,7 +8,7 @@ class Admin::RestaurantsController < ApplicationController
   end
 
   def new
-    @restaurants = Restaurant.new
+    @restaurant = Restaurant.new
   end
 
   def create
