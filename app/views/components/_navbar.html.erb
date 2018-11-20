@@ -13,12 +13,19 @@
   <!-- Profile picture with dropdown list -->
   <div class="navbar-dailycato-item">
     <div class="dropdown">
-      <img src="https://kitt.lewagon.com/placeholder/users/dylanmertens" class="avatar dropdown-toggle" id="navbar-dailycato-menu" data-toggle="dropdown">
-      <ul class="dropdown-menu dropdown-menu-right navbar-dailycato-dropdown-menu">
-        <li><a href="#">My Profile</a></li>
-        <li><a href="#">Vouchers</a></li>
-        <li><a href="#">Log Out</a></li>
-      </ul>
+      <% if user_signed_in? %>
+        <img src="https://kitt.lewagon.com/placeholder/users/dylanmertens" class="avatar dropdown-toggle" id="navbar-dailycato-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-dailycato-dropdown-menu">
+          <li><a href="#">My Profile</a></li>
+          <li><a href="#">Vouchers</a></li>
+          <li><a href="#">Altes Log Out</a></li>
+          <li>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+      <% else %>
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
     </div>
   </div>
 </div>
