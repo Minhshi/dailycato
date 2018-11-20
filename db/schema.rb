@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_155850) do
     t.datetime "remember_created_at"
     t.string "first_name"
     t.string "last_name"
-    t.boolean "owner"
+    t.boolean "owner", default: false
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
