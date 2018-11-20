@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  namespace :admins do
+  namespace :admin do
     resources :restaurants
   end
   resources :restaurants, only: [:index, :show]

@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
+gem "pundit"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
