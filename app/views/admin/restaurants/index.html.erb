@@ -1,4 +1,6 @@
-<h1><%= @restaurant.name %></h1>
+<% @restaurants.each do |restaurant| %>
+
+<h1><%= restaurant.name %></h1>
 
 <div class="col-md-3 ml-md-auto">
   <div class="offer">
@@ -22,12 +24,4 @@
   </div>
 </div>
 
-
-<!-- <ul>
-<% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.ingredient.name %> ( <%= dose.description %> )
-    <%= link_to "🗑", dose_path(dose), method: :delete %>
-  </li>
 <% end %>
-</ul> -->
