@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 2018_11_20_140411) do
     t.string "name"
     t.string "address"
     t.string "cuisine"
+    t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_restaurants_on_owner_id"
   end
 
   create_table "reviews", force: :cascade do |t|
