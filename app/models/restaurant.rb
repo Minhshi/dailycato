@@ -1,6 +1,4 @@
 class Restaurant < ApplicationRecord
-  has_many :deals
-  has_many :reviews
   belongs_to :user
 
   geocoded_by :address
