@@ -1,4 +1,5 @@
 
+
 <h1>We have found <%= Restaurant.count %> of deals around for <span id="date"></span>:</h1>
 
 
@@ -9,11 +10,14 @@
       <p id="date"></p>
       <!-- Code your tabs here -->
       <div class="offers-container">
+
         <% @restaurants.each do |restaurant| %>
 
         <div class="offer-detail">
           <div class="offer-count">
+
             <p><%= restaurant.id %></p>
+
           </div>
           <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo">
           <div class="restaurant-details">
@@ -32,6 +36,7 @@
             <p>345€</p>
           </div>
           <div class="offer-link">
+
             <p> <%= link_to ">", admin_restaurant_path(restaurant) %></p>
           </div>
         </div>
@@ -42,11 +47,12 @@
   </div> -->
 <div
   id="map"
+
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAP_API'] %>"
 ></div>
 
+
 </div>
 
 <h1>PAGE END</h1>
-
