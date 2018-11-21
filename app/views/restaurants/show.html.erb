@@ -1,1 +1,33 @@
-<p> Test Show</p>
+<h1><%= @restaurant.name %></h1>
+
+<div class="col-md-3 ml-md-auto">
+  <div class="offer">
+
+    <div class="summary">
+      <div class="name">
+        <p>Schnitzeltag</p>
+      </div>
+      <div class="description">
+      <p>Jedes Schnitzel nach Wahl</p>
+      <p> <%= link_to "back", admin_restaurants_path %>
+    </p>
+
+    <div class="price">
+      <p>3.9€</p>
+    </div>
+
+    <div class="info">
+      <p>Mehr anzeigen</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- <ul>
+<% @cocktail.doses.each do |dose| %>
+  <li>
+    <%= dose.ingredient.name %> ( <%= dose.description %> )
+    <%= link_to "🗑", dose_path(dose), method: :delete %>
+  </li>
+<% end %>
+</ul> -->
