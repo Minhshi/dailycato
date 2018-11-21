@@ -9,7 +9,7 @@ def show?
 end
 
 def update?
-  restaurant.owner == user
+  restaurant.user == user
 end
 
 def destroy?
