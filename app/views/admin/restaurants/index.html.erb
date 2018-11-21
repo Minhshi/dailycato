@@ -1,27 +1,86 @@
-<% @restaurants.each do |restaurant| %>
 
-<h1><%= restaurant.name %></h1>
+<h1>These are the best offers around for <strong id="date"></strong>:</h1>
 
-<div class="col-md-3 ml-md-auto">
-  <div class="offer">
 
-    <div class="summary">
-      <div class="name">
-        <p>Schnitzeltag</p>
+<div class="main-container">
+  <div class="offer-container">
+    <div class="container">
+      <p id="date"></p>
+      <!-- Code your tabs here -->
+      <div class="offers">
+        <% @restaurants.each do |restaurant| %>
+
+        <div class="offer-detail">
+          <div class="offer-count">
+            <p>Number</p>
+          </div>
+          <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo">
+          <div class="restaurant-details">
+            <h3><%= restaurant.name %></h3>
+            <p><%= restaurant.address %></p>
+            <p><%= restaurant.cuisine %></p>
+          </div>
+          <div class="restaurant-offer">
+            <p>Schnitzeltag</p>
+            <p>Das kannst du dir nicht entgehen lassen</p>
+          </div>
+          <div class="offer-table">
+            <button type="button" class="btn btn-success">Book a table</button>
+          </div>
+          <div class="offer-price">
+            <p>345€</p>
+          </div>
+          <div class="offer-link">
+            <p>></p>
+          </div>
+        </div>
       </div>
-      <div class="description">
-      <p>Jedes Schnitzel nach Wahl</p>
-      </div>
-    </div>
-
-    <div class="price">
-      <p>3.9€</p>
-    </div>
-
-    <div class="info">
-      <p>Mehr anzeigen</p>
+      <% end %>
     </div>
   </div>
+
+  <div id="map"></div>
 </div>
 
-<% end %>
+
+
+
+<script>
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvD5ZuPF8Sf3tXWGOrkgpOGWUfaTpSxKc&callback=initMap"
+async defer></script>
+
+
+
+
+
+
+
+
+<h1>The best deals nearby.</h1>
+
+<% @restaurants.each do |restaurant| %>
+
+<div class="restaurant-index .col-md-6 .offset-md-3">
+  <div class="restaurant-avatar">
+    <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" style="width:120px;height:120px;">
+    <div class="restaurant-desc">
+      <div class="restaurant-name">
+        <h4><%= restaurant.name %></h4>
+      </div>
+      <p><%= restaurant.address %><p>
+        <p><%= restaurant.cuisine %><p>
+          <p><%= restaurant.owner %><p>
+            <button type="button" class="btn btn-success">More information</button>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
