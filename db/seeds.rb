@@ -8,8 +8,9 @@
 User.delete_all
 timraue = User.create!(email: "tim.raue@web.de", first_name: "Tim", last_name: "Raue", password: "123123")
 dylan = User.create!(email: "dylan.boi@web.de", first_name: "Dylan", last_name: "Mertens", password: "123123")
+
 Restaurant.delete_all
 restaurants = Restaurant.create!(name: 'Tim Raue', address: "Rudi-Dutschke-Straße 7",  cuisine: "deutsche küche", owner: timraue)
-restaurants = Restaurant.create!(name: 'Dylans Küsche', address: "Dy Straße 8",  cuisine: "deutsche küche", owner: dylan)
+restaurants = Restaurant.create!(name: 'Dylans Küsche', address: "Spreeufer 3",  cuisine: "deutsche küche", owner: dylan)
 
 
