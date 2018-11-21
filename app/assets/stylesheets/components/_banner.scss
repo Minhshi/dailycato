@@ -22,18 +22,46 @@
 }
 
 #inputfield {
-  width: 60vh !important;
-  margin: 8px 0;
-  padding: 15px 0px;
+  width: 30vw;
+  // margin: 8px 0;
+  margin: 0 auto;
+  padding: 0px 0px;
   color: black;
   font-family: 'Andika', sans-serif;
   font-size: 20px;
   text-align: center;
+  margin-bottom: 7px;
 }
 
-#landing-page-form {
-height: -350px;
+@media (min-width: 481px) and (max-width: 767px) {
+
+#inputfield {
+  font-size: 15px;
+  width: 40vw;
 }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+ #inputfield {
+  font-size: 15px;
+  width: 40vw;
+
+}
+
+}
+
+// @media only screen and (max-width: 600px) {
+//     #inputfield {
+//         width: 30vh;
+//     }
+// }
 
 // .find-deals {
 //   background-color: #3E9B4D;

@@ -2,7 +2,8 @@
   font-family: 'Andika', sans-serif;
   background-color: #3E9B4D;
   color: white;
-  width: 60vh !important;
+  width: 30vw;
+  margin: 0 auto;
   padding: 5px 0px;
   text-align: center;
   text-decoration: none;
@@ -15,11 +16,48 @@
   border-radius: 6px;
   background-color: transparent;
   color: #F46036;
-  padding: 5px 40px;
+  width: 10vw;
+  padding: 5px 0px;
   border: 1px solid #F46036;
   text-align: center;
   font-weight: bold;
   font-family: 'Andika', sans-serif;
 }
 
+.login-button {
+ font-family: 'Andika', sans-serif;
+ background-color: transparent;
+ color: #F46036;
+ width: 5vw;
+ margin: 0 auto;
+ padding: 5px 30px;
+ text-align: center;
+ text-decoration: none;
+ font-size: 14px;
+ font-weight: lighter;
+ border: 1px solid #F46036;
+ border-radius: 5px;
+}
 
+@media (min-width: 481px) and (max-width: 767px) {
+
+  #find-button {
+    font-size: 12px;
+    width: 40vw;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+
+  #find-button {
+    font-size: 12px;
+    width: 40vw;
+  }
+
+}
