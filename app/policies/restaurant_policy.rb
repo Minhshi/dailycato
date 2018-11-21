@@ -8,6 +8,14 @@ def show?
   true
 end
 
+def create?
+  true
+end
+
+def edit?
+  restaurant.user == user
+end
+
 def update?
   restaurant.user == user
 end
