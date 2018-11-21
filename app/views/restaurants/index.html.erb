@@ -1,3 +1,11 @@
+<h1>List of Restaurants Page</h1>
+<ul>
+<% @restaurants.each do |r| %>
+  <li><%= link_to r.name, restaurant_path(r) %></li>
+<% end %>
+</ul>
+<%= link_to 'Back', root_path %>
+
 
 <h1>These are the best offers around for <span id="date"></span>:</h1>
 
@@ -32,7 +40,7 @@
             <p>345€</p>
           </div>
           <div class="offer-link">
-            <p> <%= link_to ">", admin_restaurant_path(restaurant) %></p>
+            <p> <%= link_to ">", restaurant_path(restaurant) %></p>
           </div>
         </div>
       </div>
@@ -75,7 +83,7 @@
       </div>
       <p><%= restaurant.address %><p>
         <p><%= restaurant.cuisine %><p>
-          <p><%= restaurant.owner %><p>
+          <p><%= restaurant.user %><p>
             <button type="button" class="btn btn-success">More information</button>
           </div>
         </div>

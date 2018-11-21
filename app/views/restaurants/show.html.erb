@@ -9,7 +9,7 @@
       </div>
       <div class="description">
       <p>Jedes Schnitzel nach Wahl</p>
-      <p> <%= link_to "back", admin_restaurants_path %>
+      <p> <%= link_to "back", restaurants_path %>
     </p>
 
     <div class="price">
@@ -22,12 +22,9 @@
   </div>
 </div>
 
-
-<!-- <ul>
-<% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.ingredient.name %> ( <%= dose.description %> )
-    <%= link_to "🗑", dose_path(dose), method: :delete %>
-  </li>
+<% if policy(@restaurant).update? %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <% end %>
-</ul> -->
+<%= link_to 'Back', restaurants_path %>
+
+
