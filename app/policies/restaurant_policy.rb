@@ -8,12 +8,20 @@ def show?
   true
 end
 
+def create?
+  user.admin == true
+end
+
+def edit?
+  user.admin == true
+end
+
 def update?
-  restaurant.owner == user
+  user.admin == true
 end
 
 def destroy?
-  restaurant.user == user
+  user.admin == true
 end
 
 def restaurant

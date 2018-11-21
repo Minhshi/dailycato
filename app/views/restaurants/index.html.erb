@@ -1,0 +1,8 @@
+<h1>List of Restaurants Page</h1>
+<ul>
+<% @restaurant.each do |r| %>
+  <li><%= link_to r.name, restaurant_path(r) %></li>
+<% end %>
+</ul>
+<%= link_to 'Back', root_path %>
+
