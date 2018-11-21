@@ -1,9 +1,10 @@
 
-<h1>These are the best offers around for <strong id="date"></strong>:</h1>
+<h1>These are the best offers around for <span id="date"></span>:</h1>
 
 
-<div class="main-container">
-  <div class="offer-container">
+<div class="container-fluid">
+  <div class="row">
+  <div class="offer-container col-md-8">
     <div class="container">
       <p id="date"></p>
       <!-- Code your tabs here -->
@@ -31,31 +32,28 @@
             <p>345€</p>
           </div>
           <div class="offer-link">
-            <p>></p>
+            <p> <%= link_to ">", admin_restaurant_path(restaurant) %></p>
           </div>
         </div>
       </div>
       <% end %>
     </div>
-  </div>
 
-  <div id="map"></div>
+  <div id="map col-ms-4"></div>
+  </div>
+</div>
 </div>
 
 
 
 
-<script>
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    });
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvD5ZuPF8Sf3tXWGOrkgpOGWUfaTpSxKc&callback=initMap"
-async defer></script>
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAP_API'] %>"
+></div>
 
 
 
