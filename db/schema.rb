@@ -30,11 +30,8 @@ ActiveRecord::Schema.define(version: 2018_11_21_102707) do
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
-
     t.float "latitude"
     t.float "longitude"
-
     t.index ["owner_id"], name: "index_restaurants_on_owner_id"
   end
 
