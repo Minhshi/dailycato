@@ -9,19 +9,19 @@ def show?
 end
 
 def create?
-  user.admin == true
+  true
 end
 
 def edit?
-  user.admin == true
+  restaurant.user == user
 end
 
 def update?
-  user.admin == true
+  restaurant.user == user
 end
 
 def destroy?
-  user.admin == true
+  restaurant.user == user
 end
 
 def restaurant
