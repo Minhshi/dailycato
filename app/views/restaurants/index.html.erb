@@ -28,6 +28,7 @@
 
 
 
+
     <% @restaurants.each do |restaurant| %>
 
     <div class="offer-detail">
@@ -45,6 +46,7 @@
       <div class="restaurant-offer">
         <p>Schnitzeltag</p>
         <p>Das kannst du dir nicht entgehen lassen</p>
+
       </div>
       <div class="offer-table">
         <button type="button" class="btn btn-success"><%= link_to "Book a table", restaurant_path(restaurant) %> </button>
@@ -54,12 +56,14 @@
       </div>
       <div class="offer-link">
 
+
         <p> <%= link_to ">", restaurant_path(restaurant) %></p>
       </div>
     </div>
     <% end %>
   </div>
   <div
+
   id="map"
 
   data-markers="<%= @markers.to_json %>"
