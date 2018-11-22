@@ -30,14 +30,14 @@
             <p>Das kannst du dir nicht entgehen lassen</p>
           </div>
           <div class="offer-table">
-            <button type="button" class="btn btn-success"><%= link_to "Book a table", admin_restaurant_path(restaurant) %> </button>
+            <button type="button" class="btn btn-success"><%= link_to "Book a table", restaurant_path(restaurant) %> </button>
           </div>
           <div class="offer-price">
             <p>345€</p>
           </div>
           <div class="offer-link">
 
-            <p> <%= link_to ">", admin_restaurant_path(restaurant) %></p>
+            <p> <%= link_to ">", restaurant_path(restaurant) %></p>
           </div>
         </div>
       <% end %>
