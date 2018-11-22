@@ -6,7 +6,7 @@ class RestaurantsController < ApplicationController
       {
         lng: restaurant.longitude,
         lat: restaurant.latitude,
-        infoWindow: { content: render_to_string(partial: "/flats/map_window", locals: { flat: flat }) }
+        infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
       }
     end
   end
@@ -14,7 +14,6 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
   end
-
 
   def new
     @restaurant = Restaurant.new
