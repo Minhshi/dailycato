@@ -1,8 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
-    # @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
-    @restaurants = Restaurant.near(params[:location], 3)
 
+    @restaurants = Restaurant.near(params[:location], 3)
     @markers = @restaurants.map do |restaurant|
       {
         lng: restaurant.longitude,
@@ -12,8 +11,10 @@ class RestaurantsController < ApplicationController
     end
   end
 
+
   def show
     @restaurant = Restaurant.find(params[:id])
+    @restaurants = Restaurant.all
   end
 
   def new
@@ -22,9 +23,10 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.user = current_user
     authorize @restaurant
     if @restaurant.save
-      redirect_to @restaurant
+      redirect_to restaurants_path
     else
       render new_restaurant_path
     end
@@ -36,7 +38,10 @@ class RestaurantsController < ApplicationController
   end
 
   def update
+    @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
+    @restaurant.update(restaurant_params)
+    redirect_to restaurants_path
   end
    private
 
