@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
+    # @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
+    @restaurants = Restaurant.near(params[:location], 3)
 
     @markers = @restaurants.map do |restaurant|
       {
