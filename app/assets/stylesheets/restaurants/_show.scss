@@ -1,5 +1,5 @@
 table {
-  width: 20vw;
+  width: 25vw;
 }
 
 
@@ -22,7 +22,7 @@ p {
 }
 
 .contact-table{
-  font-size: 15px;
+  font-size: 18px;
   text-align: left;
 }
 
@@ -51,13 +51,22 @@ p {
   margin-right: 20px;
 }
 
-.flex-container-all {
+.flex-container-all-boxes {
   display: flex;
   flex-direction: column;
-  float:right;
+  float:right !important;
 }
 
-.main-flex-container {
+.flex-container-main {
 display: flex;
 flex-direction: row;
 }
+
+.details-restaurant {
+  margin-left: 20px;
+  width: 120vh;
+  height: 30vw;
+
+  border: 1px solid black;
+}
+
