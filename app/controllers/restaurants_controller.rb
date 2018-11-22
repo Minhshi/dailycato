@@ -11,6 +11,12 @@ class RestaurantsController < ApplicationController
     end
   end
 
+
+  def show
+    @restaurant = Restaurant.find(params[:id])
+    @restaurants = Restaurant.all
+  end
+
   def new
     @restaurant = Restaurant.new
   end
@@ -24,10 +30,6 @@ class RestaurantsController < ApplicationController
     else
       render new_restaurant_path
     end
-  end
-
-  def show
-    @restaurant = Restaurant.find(params[:id])
   end
 
   def edit
