@@ -24,7 +24,17 @@ ActiveRecord::Schema.define(version: 2018_11_21_102707) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.index ["user_id"], name: "index_restaurants_on_user_id"
+
+    t.index ["owner_id"], name: "index_restaurants_on_owner_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+
   end
 
   create_table "users", force: :cascade do |t|
