@@ -1,6 +1,33 @@
 
 <h1>Restaurant details</h1>
 
+
+    <div class="summary">
+      <div class="name">
+        <p>Schnitzeltag</p>
+      </div>
+      <div class="description">
+        <p>Jedes Schnitzel nach Wahl</p>
+        <p> <%= link_to "back", restaurants_path %>
+        </p>
+
+        <div class="price">
+          <p>3.9€</p>
+        </div>
+
+        <div class="info">
+          <p>Mehr anzeigen</p>
+        </div>
+      </div>
+    </div>
+
+    <% if policy(@restaurant).update? %>
+    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+    <% end %>
+    <%= link_to 'Back', restaurants_path %>
+
+  </div>
+
 <div>
   <h3><%= @restaurant.name %></h3>
   <ul>
@@ -10,9 +37,9 @@
 </div>
 <div>
 
+
 </div>
 <%= link_to "Back", restaurants_path%>
-
 
 
 <div></div>
