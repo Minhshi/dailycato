@@ -1,45 +1,117 @@
+<div class="main-flex-container"></div>
 
-<h1>Restaurant details</h1>
+<div class="index_flex">
+    <div class="offers-container">
 
+      <% @restaurants.each do |restaurant| %>
 
-    <div class="summary">
-      <div class="name">
-        <p>Schnitzeltag</p>
-      </div>
-      <div class="description">
-        <p>Jedes Schnitzel nach Wahl</p>
-        <p> <%= link_to "back", restaurants_path %>
-        </p>
+      <div class="offer-detail">
+        <div class="offer-count">
 
-        <div class="price">
-          <p>3.9€</p>
+          <p><%= restaurant.id %></p>
+
         </div>
+        <img src="https://res.cloudinary.com/duh9oaa44/image/upload/v1542719944/edward-guk-357344-unsplash.jpg" class="restaurant-logo">
+        <div class="restaurant-details">
+          <h3><%= restaurant.name %></h3>
+          <p><%= restaurant.address %></p>
+          <p><%= restaurant.cuisine %></p>
+        </div>
+        <div class="restaurant-offer">
+          <p>Schnitzeltag</p>
+          <p>Das kannst du dir nicht entgehen lassen</p>
+        </div>
+        <div class="offer-table">
+          <button type="button" class="btn btn-success"><%= link_to "Book a table", restaurant_path(restaurant) %> </button>
+        </div>
+        <div class="offer-price">
+          <p>345€</p>
+        </div>
+        <div class="offer-link">
 
-        <div class="info">
-          <p>Mehr anzeigen</p>
         </div>
       </div>
+      <% end %>
     </div>
+</div>
 
-    <% if policy(@restaurant).update? %>
-    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-    <% end %>
-    <%= link_to 'Back', restaurants_path %>
 
+<div class="flex-container-all">
+  <div class="flex-container">
+    <div
+    id="showpage-map"
+
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAP_API'] %>"
+    ></div>
   </div>
 
-<div>
-  <h3><%= @restaurant.name %></h3>
-  <ul>
-    <li><%= @restaurant.name  %></li>
-    <li> <%= @restaurant.cuisine  %></li>
-  </ul>
+  <div class="flex-container">
+   <h2 class="box-title">Contact Details</h2>
+   <div class="center-text-left">
+     <p><%= @restaurant.name %></p>
+     <p>Rudi-Dutschke-Straße 26</p>
+     <p>10969 Berlin</p>
+   </div>
+   <table class="contact-table">
+    <tr><th>Telephone</th><td>030 25937930</td></tr>
+    <tr><th>Telephone</th><td>030 25937930</td></tr>
+    <tr><th>Email</th><td>office@tim-raue.com</td></tr>
+    <tr><th>Website</th><td>https://tim-raue.com/en/</td></tr>
+  </table>
 </div>
-<div>
 
+
+
+<div class="flex-container">
+  <h2 class="box-title">Opening Hours</h2>
+  <table>
+    <tr><th>Monday</th><td>10:00 - 22:00</td></tr>
+    <tr><th>Tuesday</th><td>10:00 - 22:00</td></tr>
+    <tr><th>Wednesday</th><td>10:00 - 22:00</td></tr>
+    <tr><th>Thursday</th><td>10:00 - 22:00</td></tr>
+    <tr><th>Friday</th><td>10:00 - 22:00</td></tr>
+    <tr><th>Saturday</th><td>10:00 - 22:00</td></tr>
+    <tr><th>Sunday</th><td>Closed</td></tr>
+  </table>
+</div>
+
+<div class="flex-container social-media">
+ <h2 class="box-title">Social Media</h2>
+</div>
+</div>
+</div>
+
+<% if policy(@restaurant).update? %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<% end %>
+<%= link_to 'Back', restaurants_path %>
 
 </div>
-<%= link_to "Back", restaurants_path%>
 
 
-<div></div>
+
+
+<!-- <div class="daily-offers">
+ <h2>Daily offer from 11:30 until 14:00</h2>
+</div>
+
+<h2>Offers:</h2>
+
+<div class="deals">
+  <div class="deal-title">
+    <p>3 Scheiben Bruschetta Trapanese</p>
+  </div>
+
+  <div class="deal-description">
+    <p>getrockneten Tomaten, Basilikum, Pinienkernen und Knoblauch <p>
+  </div>
+
+  <div class="deal-price">
+    <p>4.80€</p>
+  </div>
+
+  <div class="deal-info">
+    <p>Mehr anzeigen</p>
+  </div>
+</div> -->
