@@ -1,0 +1,12 @@
+<div>
+  <h1>New Booking</h1>
+    <%= simple_form_for  [@restaurant, @booking] do |b| %>
+      <%= b.input :booking_time, as: :string, input_html: {class: "datepicker"} %>
+      <%# = b.button :submit, "Book", class: "btn btn-primary" %>
+      <%= link_to 'Book', restaurants_path %>
+    <% end %>
+</div>
+
+
+
+
