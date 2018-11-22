@@ -6,10 +6,14 @@
       <h1 id="first-header">Hungry?</h1> <br>
       <p id="second-header">Book a Table now!</p>
 
-      <form>
-        <div class="form-group" action="/action_page.php">
-          <input type="text" class="form-control" id="inputfield" placeholder="e.g. Berlin">
-          <input type="submit" class="form-contol" value="Find Restaurants" id="find-button">
+<!-- Die Action Methode legt fest, was nach dem Druecken des Submit Buttons passieren soll. In diesem -->
+<!-- Fall soll auf eine neue Seite geleitet werden (restaurant path) -->
+<!-- das Formular bekommt eine Id, das das Plugin dieses aufruft. -->
+<!-- Damit auf der weitergeleiteten Seite die Werte in der URL stehen, braucht es eine name Klasse. -->
+      <form action="<%= restaurants_path %>" class="js-autocomplete-form">
+        <div class="form-group" >
+          <input type="text" class="form-control" value="<%= params[:location] %>" name="location" id="restaurant_address" placeholder="e.g. Berlin">
+          <input type="submit" class="form-control find-button" value="Find Restaurants">
         </div>
       </form>
     </div>

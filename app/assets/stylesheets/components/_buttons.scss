@@ -1,4 +1,4 @@
-#find-button {
+.find-button {
   font-family: 'Andika', sans-serif;
   background-color: #3E9B4D;
   color: white;
@@ -10,6 +10,40 @@
   font-size: 20px;
   border: 0 !important;
   font-weight: lighter;
+}
+
+.search-index-btn {
+    color: #999999;
+    border: 1px solid #3E9B4D;
+    padding: 2px 20px;
+    border-radius: 8px;
+    font-weight: lighter;
+    opacity: 0.6;
+}
+
+.search-index-btn:hover {
+  // opacity: 1;
+  text-decoration: none;
+  color: #3E9B4D;
+}
+
+.cta-btn {
+  font-family: 'Andika', sans-serif;
+  background-color: #3E9B4D;
+  color: white;
+  // width: 150px;
+  margin: 0 auto;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border: 0 !important;
+  font-weight: lighter;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 #filter-button {
