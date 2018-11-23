@@ -25,3 +25,17 @@ background-size: cover !important;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.offer-name {
+  display: flex;
+flex: 0 0 100px;
+}
+
+.offer-price {
+display: flex;
+position: relative;
+}
+
+.flex-text {
+  flex: 1 0 auto;
+}
