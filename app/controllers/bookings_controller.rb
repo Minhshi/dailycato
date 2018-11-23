@@ -9,9 +9,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking.restaurant = @restaurant
-
     if @booking.save
-      redirect_to restaurant_bookings_path(@restaurant)
+      flash[:notice] = "Booking was successful!"
+      redirect_to restaurant_path(@restaurant)
     else
       render 'new'
     end
