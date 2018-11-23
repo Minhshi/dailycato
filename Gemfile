@@ -21,6 +21,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 gem "pundit"
 gem "geocoder"
+gem 'carrierwave', '~> 1.2'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

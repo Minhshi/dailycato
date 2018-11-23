@@ -4,5 +4,7 @@
 <%= f.input :name %>
 <%= f.input :cuisine, :collection => ["modern european", "salad", "gastropub", "asian", "japanese", "italian", "vietnamese", "eastern european", "burrito"] %>
 <%= f.input :address %>
+<%= f.input :photo %>
+<%= f.input :photo_cache, as: :hidden %>
 <%= f.submit %>
 <% end %>
