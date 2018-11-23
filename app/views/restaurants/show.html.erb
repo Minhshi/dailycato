@@ -4,11 +4,11 @@
       <div class="details-restaurant">
         <h1><%= @restaurant.name %></h1>
         <h2><%= @restaurant.address %></h2>
-        <div class="booking-field">
+        <div class="form-inline booking-field">
+          <h2>When do you want to book a table?</h2>
           <%= simple_form_for [@restaurant, Booking.new] do |b| %>
-            <%= b.input :booking_time, as: :string, input_html: {class: "datepicker"} %>
-            <%# = b.button :submit, "Book", class: "btn btn-primary" %>
-            <%= b.button :submit, "Reserve my Table", class: "booking-button" %>
+            <%= b.input :booking_time, as: :string, label: false, input_html: {class: "datepicker"} %>
+            <%= b.button :submit, "Reserve my Table", class: "extrawurst" %>
           <% end %>
         </div>
       </div>
