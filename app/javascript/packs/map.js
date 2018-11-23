@@ -15,12 +15,6 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 
   const markers = JSON.parse(mapElement.dataset.markers);
 
-  markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([marker.lng, marker.lat])
-      .addTo(map);
-  })
-
   if (markers.length === 0) {
     map.setZoom(1);
   } else if (markers.length === 1) {
@@ -35,7 +29,12 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   }
 
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
+    var el = document.createElement('div');
+    el.className = 'marker-pin';
+    el.innerText = marker.id;
+    // el.style = "width: 50px; height: 50px; background: red;";
+
+    new mapboxgl.Marker(el)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
       .setHTML(marker.infoWindow.content))

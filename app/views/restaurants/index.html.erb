@@ -14,8 +14,8 @@
         </div>
 
 
-        <div>
-          <h1>We have found <%= Restaurant.count %> of deals around for <span id="date"></span>:</h1>
+        <div class="headline-search">
+          <h1>We have found <%= Restaurant.count %> deals around, for <span id="date"></span>:</h1>
         </div>
 
 
@@ -24,7 +24,7 @@
         <% @restaurants.each do |restaurant| %>
 
         <div class="offer-detail"  onclick="location.href='<%= restaurant_path(restaurant) %>';">
-          <div class="offer-count">
+          <div class="offer-count marker-pin">
 
             <p><%= restaurant.id %></p>
 
@@ -69,7 +69,11 @@
 
           <div class="offer-link">
 
-            <p> <%= link_to ">", restaurant_path(restaurant) %></p>
+            <p>
+              <a href="<%= restaurant_path(restaurant) %>">
+                <i class="fas fa-angle-right icon"></i>
+              </a>
+            </p>
           </div>
         </div>
         <% end %>
