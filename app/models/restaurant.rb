@@ -12,3 +12,7 @@ class Restaurant < ApplicationRecord
   validates :address, presence: true
   validates :user, presence: true
 end
+
+class Restaurant < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+end
