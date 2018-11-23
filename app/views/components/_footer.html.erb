@@ -1,12 +1,21 @@
 <div class="footer">
   <div class="footer-copyright">
-<img src="https://i.imgur.com/BWA8wg5.png.jpg" alt="dailycato-logo" height="66,75" width="253,5">
-<!-- <img src="https://i.imgur.com/Aa0kyBg.png" alt="dailycato-logo" height="66,75" width="253,5"> -->
+    <img src="https://i.imgur.com/BWA8wg5.png.jpg" alt="dailycato-logo" height="66,75" width="253,5">
+    <!-- <img src="https://i.imgur.com/Aa0kyBg.png" alt="dailycato-logo" height="66,75" width="253,5"> -->
   </div>
   <div class="footer-links">
-    <%= link_to "For Restaurants", new_restaurant_path %>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
+    <div class="footer-extras">
+      <%= link_to "T&C", new_restaurant_path, class: "footer-styling" %>
+      <%= link_to "Privacy", new_restaurant_path, class: "footer-styling" %>
+      <%= link_to "For Restaurants", new_restaurant_path, class: "footer-styling" %>
+      <%= link_to "Impressum", new_restaurant_path, class: "footer-styling" %>
+
+    </div>
+    <div class="social-media-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
 </div>
+<p></p>
