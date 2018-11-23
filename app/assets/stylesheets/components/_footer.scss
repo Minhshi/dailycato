@@ -15,14 +15,14 @@
   display: flex;
   align-items: center;
 }
-.footer-links a {
+.social-media-links a {
   color: black;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
-.footer-links a:hover {
+.social-media-links a:hover {
   opacity: 1;
 }
 
@@ -31,8 +31,27 @@
 }
 
 #logo {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Andika';
   font-size: 40px;
   color: #F46036;
   margin-top: 15px;
+}
+
+.footer-styling {
+  font-family: 'Andika';
+  font-size: 12px !important;
+  color: black !important;
+  text-decoration: none !important;
+  opacity: 0.5;
+}
+
+.footer-extras :hover {
+  opacity: 1.0;
+}
+
+.footer-extras {
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
+  padding-right: 30px;
 }
