@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
-    @restaurants = Restaurant.order("id")
     @restaurants_geo = Restaurant.near(params[:location], 3)
     @markers = @restaurants_geo.map do |restaurant|
       {
@@ -14,6 +13,14 @@ class RestaurantsController < ApplicationController
 
 
   def show
+    # @restaurant = Restaurant.where(id: params[:id])
+    # @markers = @restaurant.map do |restaurant|
+    #   {
+    #     lng: restaurant.longitude,
+    #     lat: restaurant.latitude,
+    #     infoWindow: { content: render_to_string(partial: "/restaurants/map_window", locals: { restaurant: restaurant }) }
+    #   }
+    # end
     @restaurant = Restaurant.find(params[:id])
   end
 
